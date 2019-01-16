@@ -18,10 +18,19 @@ function getRoutes() {
       "banque",
       "welcome"
     ],
-    "login" => [
-      "admin",
-      "loginUser",
-    ]
+    "virement" => [
+      "virement",
+      "addVirement",
+    ],
+    "versement" => [
+      "versement",
+      "addVersement",
+    ],
+    "retrait" => [
+      "retrait",
+      "addRetrait",
+    ],
+
   ];
 }
 
