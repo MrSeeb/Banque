@@ -40,5 +40,17 @@ class compteManager extends manager {
       ]);
       return $result;
     }
+
+    public function addVirement(compte $compte) {
+      $db = $this->getDb();
+      $req = $db->prepare("UPDATE comptes SET numero = :numero, type = :type, solde = :solde WHERE id = :id");
+      $result = $req->execute([
+        "numero" => $compte->getNumero(),
+        "type" => $compte->getType(),
+        "solde" => $compte->getSolde(),
+        "id" => $compte->getId(),
+      ]);
+      return $result;
+    }
 }
 ?>

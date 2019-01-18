@@ -33,6 +33,11 @@ class compte extends entity
     $this->setSolde($newSolde);
   }
 
+  public function delMoney(int $amount) {
+    $newSolde = $this->getSolde() - $amount;
+    $this->setSolde($newSolde);
+  }
+
   function __construct($data = NULL) {
     if($data) {
       $this->hydrate($data);
