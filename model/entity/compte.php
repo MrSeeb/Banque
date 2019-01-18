@@ -28,9 +28,16 @@ class compte extends entity
     return $this->solde;
   }
 
-  function __construct($data) {
-    $this->hydrate($data);
+  public function addMoney(int $amount) {
+    $newSolde = $this->getSolde() + $amount;
+    $this->setSolde($newSolde);
+  }
+
+  function __construct($data = NULL) {
+    if($data) {
+      $this->hydrate($data);
     }
+  }
 
 }
  ?>

@@ -1,4 +1,5 @@
-<div class="d-flex justify-content-center bg-dark">
+<h2>CREATION D'UN NOUVEAU COMPTE BANCAIRE</h2>
+<div class="d-flex justify-content-center bg-dark mb-5 mt-5">
 <form action="" method="post" style="width: 30vw">
     <div class="form-group">
       <label class="container text-light" for="numero">N° de compte</label>

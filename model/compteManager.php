@@ -6,7 +6,7 @@ class compteManager extends manager {
     public function getComptes() {
         $db = $this->getDb();
         $req = $db->query("SELECT * FROM comptes");
-        $result = $req->fetchall(PDO::FETCH_ASSOC);
+        $result = $req->fetchall(PDO::FETCH_CLASS, "compte");
         return $result;
     }
 
@@ -21,12 +21,14 @@ class compteManager extends manager {
          return $result;
     }
     public function deleteCompte($id) {
-    $db = $this->getDb();
-    $req = $db->prepare("DELETE FROM comptes WHERE id = $id");
-    $result = $req->execute([
+      $db = $this->getDb();
+      $req = $db->prepare("DELETE FROM comptes WHERE id = :id");
+      $result = $req->execute([
         "id" => $id,
-    ]);
-    return $result;
-}
+      ]);
+      return $result;
+    }
+
+    
 }
 ?>

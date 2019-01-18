@@ -20,14 +20,14 @@ require "view/template/header.php";
   </thead>
   <tbody>
     <?php
-        foreach ($comptes as $key => $value) {
+        foreach ($comptes as $key => $compte) {
     ?>
         <tr>
-          <th scope="row"><?php echo $value["id"]; ?></th>
-          <td><?php echo $value["numero"]; ?></td>
-          <td><?php echo $value["type"]; ?></td>
-          <td><?php echo $value["solde"]; ?></td>
-          <td><a href="deleteCompte?id=<?php echo $value['id']; ?>" class="btn btn-danger">Supprimer</a></td>
+          <th scope="row"><?php echo $compte->getId(); ?></th>
+          <td><?php echo $compte->getNumero(); ?></td>
+          <td><?php echo $compte->getType(); ?></td>
+          <td><?php echo $compte->getSolde(); ?></td>
+          <td><a href="deleteCompte?id=<?php echo $compte->getId(); ?>" class="btn btn-danger">Supprimer</a></td>
         </tr>
     <?php
         }
