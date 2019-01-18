@@ -16,7 +16,11 @@ function getRoutes() {
   return [
     "" => [
       "banque",
-      "welcome"
+      "welcome",
+    ],
+    "" => [
+      "compte",
+      "afficherComptes",
     ],
     "virement" => [
       "virement",
@@ -30,6 +34,15 @@ function getRoutes() {
       "retrait",
       "addRetrait",
     ],
+    "ajouterCompte" => [
+      "compte",
+      "ajouterCompte",
+    ],
+    "deleteCompte" => [
+      "compte",
+      "deleteCompte",
+      ["id" => ["integer"]]
+    ]
 
   ];
 }
