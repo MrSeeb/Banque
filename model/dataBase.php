@@ -6,7 +6,7 @@ class dataBase {
   const host  = "localhost";
   const dbName = "Banque";
   const login = "phpmyadmin";
-  const mdp = "O7dwjfb9";
+  const mdp = "";
   static public function BD() {
     $db = new PDO("mysql:host=" . self::host .";dbname=" . self::dbName , self::login, self::mdp);
     return $db;
