@@ -19,7 +19,7 @@ function getRoutes() {
       "afficherComptes",
     ],
     "virement" => [
-      "virement",
+      "compte",
       "addVirement",
     ],
     "versement" => [
@@ -27,7 +27,7 @@ function getRoutes() {
       "addVersement",
     ],
     "retrait" => [
-      "retrait",
+      "compte",
       "addRetrait",
     ],
     "ajouterCompte" => [

@@ -12,13 +12,13 @@ class compteManager extends manager {
 
     public function addCompte(compte $compte) {
       $db = $this->getDb();
-         $req = $db->prepare("INSERT INTO comptes (numero, type, solde) VALUES (:numero, :type, :solde)");
-         $result = $req->execute([
-             "numero" => $compte->getNumero(),
-             "type" => $compte->getType(),
-             "solde" => $compte->getSolde(),
-         ]);
-         return $result;
+      $req = $db->prepare("INSERT INTO comptes (numero, type, solde) VALUES (:numero, :type, :solde)");
+      $result = $req->execute([
+        "numero" => $compte->getNumero(),
+        "type" => $compte->getType(),
+        "solde" => $compte->getSolde(),
+        ]);
+        return $result;
     }
     public function deleteCompte($id) {
       $db = $this->getDb();
@@ -29,6 +29,16 @@ class compteManager extends manager {
       return $result;
     }
 
-    
+    public function addVersement(compte $compte) {
+      $db = $this->getDb();
+      $req = $db->prepare("UPDATE comptes SET numero = :numero, type = :type, solde = :solde WHERE id = :id");
+      $result = $req->execute([
+        "numero" => $compte->getNumero(),
+        "type" => $compte->getType(),
+        "solde" => $compte->getSolde(),
+        "id" => $compte->getId(),
+      ]);
+      return $result;
+    }
 }
 ?>

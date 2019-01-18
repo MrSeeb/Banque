@@ -28,11 +28,26 @@ class compteController {
 
     public function addVersement() {
       $compteManager = new compteManager();
-      //On vérifie qu'u formulaire de depot a été soumis
+      //On vérifie qu'un formulaire de depot a été soumis
+      $comptes = $compteManager->getComptes();
+      if(!empty($_POST))  {
+        foreach($comptes as $key => $compte)
+        {
+          if($compte->getNumero() === $_POST["numero"])
+          {
+            $compte->addMoney($_POST["solde"]);
+            $compteManager->addVersement($compte);
+            redirectTo("");
+          }
+        }
+        // $compteManager->addVersement($newSolde);
+      }
+      require "view/versementView.php";
+    }
       //On récuère avec le manager le compte sélectionner par l'utilisayeur dans le formulaire
       //On appel la méthode addMoney de l'objet avec pour argument le montant du formulaire
       // On update l'objet en base de données avec le manager
       //On charge la vue avec le formulaire de dépot d'argent
-    }
+
 }
  ?>

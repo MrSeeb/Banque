@@ -27,7 +27,9 @@ require "view/template/header.php";
           <td><?php echo $compte->getNumero(); ?></td>
           <td><?php echo $compte->getType(); ?></td>
           <td><?php echo $compte->getSolde(); ?></td>
-          <td><a href="deleteCompte?id=<?php echo $compte->getId(); ?>" class="btn btn-danger">Supprimer</a></td>
+          <td>
+            <a href="deleteCompte?id=<?php echo $compte->getId(); ?>" class="btn btn-danger">Supprimer</a>
+          </td>
         </tr>
     <?php
         }
