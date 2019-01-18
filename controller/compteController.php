@@ -49,19 +49,19 @@ class compteController {
       // On update l'objet en base de données avec le manager
       //On charge la vue avec le formulaire de dépot d'argent
 
-      public function addVirement() {
+      public function addRetrait() {
         $compteManager = new compteManager();
         $comptes = $compteManager->getComptes();
         if(!empty($_POST)) {
           foreach($comptes as $key => $compte)  {
             if($compte->getNumero() === $_POST["numero"]) {
               $compte->delMoney($_POST["solde"]);
-              $compteManager->addVirement($compte);
+              $compteManager->addRetrait($compte);
               redirectTo("");
             }
           }
         }
-        require "view/virementView.php";
+        require "view/retraitView.php";
       }
 
 }

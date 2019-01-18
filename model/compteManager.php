@@ -41,7 +41,7 @@ class compteManager extends manager {
       return $result;
     }
 
-    public function addVirement(compte $compte) {
+    public function addRetrait(compte $compte) {
       $db = $this->getDb();
       $req = $db->prepare("UPDATE comptes SET numero = :numero, type = :type, solde = :solde WHERE id = :id");
       $result = $req->execute([
