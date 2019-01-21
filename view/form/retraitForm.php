@@ -1,4 +1,3 @@
-<!-- Voici un fichier destiné à contenir un formulaire -->
 <form action="" method="post">
   <div class="form-group">
     <label>Montant</label>

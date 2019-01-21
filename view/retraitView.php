@@ -1,9 +1,8 @@
 <?php
-include "view/template/header.php";
+include "template/header.php";
+require "form/retraitForm.php";
 ?>
 
-
-
 <?php
-include "view/template/footer.php"
+include "template/footer.php";
 ?>
